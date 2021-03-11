@@ -12,6 +12,7 @@ django-allauth = "^0.44.0"
 django-crispy-forms = "^1.11.1"
 whitenoise = "^5.2.0"
 pytest-django = "^4.1.0"
+django-environ = "^0.4.5"
 
 [tool.poetry.dev-dependencies]
 
