@@ -41,3 +41,13 @@ class SnackTests(TestCase):
         self.assertContains(response, self.NAME)
         self.assertTemplateUsed(response, "snacks/snack-list.html")
         self.assertTemplateUsed(response, "_base.html")
+
+    def test_snack_detail_view(self):
+        self.client.login(email=self.USER_EMAIL, password=self.USER_PASS)
+        response = self.client.get(reverse("snack_detail", args="1"))
+        no_response = self.client.get("/999999/")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(no_response.status_code, 404)
+        self.assertContains(response, self.USER_EMAIL)
+        self.assertTemplateUsed(response, "snacks/snack-detail.html")
+        self.assertTemplateUsed(response, "_base.html")
