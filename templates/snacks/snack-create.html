@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h1>New Snack</h1>
+<div class="card">
+    <form action="" method="post" class="m-3">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="Add" class="btn btn-primary w-100 mt-4">
+    </form>
+    <a href="/" class="card-link btn btn-light">Home</a>
+</div>
+
+{% endblock content %}

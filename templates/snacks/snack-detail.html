@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<h1>{{ snack.name }}</h1>
+<div class="card m-auto">
+    <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">Purchased by: {{ snack.purchaser }}</h4>
+            <p class="card-text">{{ snack.description }}</p>
+            <a href="{% url 'snack_delete' snack.pk %}" class="card-link btn btn-secondary">Remove</a>
+            <a href="{% url 'snack_update' snack.pk %}" class="card-link btn btn-primary">Update</a>
+    </div>
+    <a href="/" class="card-link btn btn-light">Home</a>
+</div>
+{% endblock content %}
